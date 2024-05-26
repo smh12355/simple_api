@@ -17,8 +17,6 @@ obj/
 *.log
 *.pdb
 
-# Ignore application settings
-appsettings.Development.json
 
 # Ignore dependency folders
 node_modules/
