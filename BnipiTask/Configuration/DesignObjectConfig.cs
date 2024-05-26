@@ -13,6 +13,12 @@ namespace BnipiTask.Configuration
 
             builder.Property(b => b.Name)
                 .IsRequired();
+
+            builder.HasMany(a => a.DocSets)
+                .WithOne(a => a.DesignObject)
+                .HasForeignKey(a => a.DesignObjectId)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

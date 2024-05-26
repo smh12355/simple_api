@@ -2,6 +2,7 @@
 using BnipiTask.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Reflection.Emit;
 
 namespace BnipiTask
@@ -16,9 +17,7 @@ namespace BnipiTask
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new ProjectConfig());
-            modelBuilder.ApplyConfiguration(new DesignObjectConfig());
-            modelBuilder.ApplyConfiguration(new DocSetConfig());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

@@ -2,9 +2,11 @@
 {
     public class DocSet
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
+        public int DesignObjectId { get; set; }
         public int Number { get; set; }
         public MarkType MarkType { get; set; }
+
         // navigation to DesignObject
         public DesignObject DesignObject { get; set; }
     }
